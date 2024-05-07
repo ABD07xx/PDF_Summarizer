@@ -36,8 +36,11 @@ Replace name_of_your_script.py with the actual name of your Python script.
 Running Local LLM using Ollama
 ----------------------------------------------
 We have used Llama 3
+
 Open Terminal use <b>litellm --model ollama/llama3</b>
+
 If Llama3 isn't installed
+
 Use <b>ollama pull llama3</b>
 
 
