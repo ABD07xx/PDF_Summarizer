@@ -1,6 +1,4 @@
-
 <h1>PDF Summarizer</h1>
-
 
 Overview
 -----------------
@@ -15,12 +13,10 @@ Dependencies
 ---------------------
 Install the necessary Python libraries by running the following command in your terminal:
 
-
 pip install langchain-community 
 pip install langchain-core 
 pip install langchain-openai
 pip install pypdf2
-
 
 To run the project, follow these steps:
 ----------------------------------------
@@ -39,6 +35,8 @@ Document Loading: The PyPDFLoader class from the langchain_community.document_lo
 Prompt Template: A custom prompt template is created to instruct the language model on how to process the document.
 Language Model Configuration: The ChatOpenAI class is configured with necessary parameters (from config.py) to interact with OpenAI's language models.
 Model Chain Setup: The LLMChain class integrates the language model with the prompt, while StuffDocumentsChain handles the interaction flow and execution based on the document content.
+Summarize Using Map Reduce: This feature involves the utilization of a MapReduce approach to summarize large documents efficiently. The process involves splitting the document into smaller chunks and using a large language model to summarize each chunk independently. Afterward, a final summarization step combines these individual summaries into a comprehensive summary, ensuring it captures the essential points of the entire document with added scalability.
+
 Configurations
 Configure the language model parameters in the config.py file. This includes API keys and settings related to the OpenAI model used.
 
