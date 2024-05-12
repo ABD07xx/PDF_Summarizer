@@ -39,6 +39,8 @@ If Llama3 isn't installed
 
 Use <b>ollama pull llama3</b>
 
+You can use any of the LLMs even GPT by Open AI just update the config files.
+
 
 Code Structure
 -------------------
