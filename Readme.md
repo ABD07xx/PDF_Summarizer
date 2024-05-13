@@ -47,21 +47,49 @@ You can use any of the LLMs even GPT by Open AI just update the config files.
 
 Code Structure
 -------------------
-Document Loading: The PyPDFLoader class from the langchain_community.document_loaders.pdf module is used to load PDF documents.
+<ul>
+    <li><strong>Document Loading</strong>:
+        <ul>
+            <li>Utilizes the <code>PyPDFLoader</code> class from the <code>langchain_community.document_loaders.pdf</code> module to load PDF documents.</li>
+        </ul>
+    </li>
+    <li><strong>Prompt Template</strong>:
+        <ul>
+            <li>A custom prompt template is created to instruct the language model on how to process the document.</li>
+        </ul>
+    </li>
+    <li><strong>Language Model Configuration</strong>:
+        <ul>
+            <li>Configures the <code>ChatOpenAI</code> class with necessary parameters (from <code>config.py</code>) to interact with OpenAI's language models.</li>
+        </ul>
+    </li>
+    <li><strong>Model Chain Setup</strong>:
+        <ul>
+            <li>Integrates the language model with the prompt using the <code>LLMChain</code> class.</li>
+            <li>Uses the <code>StuffDocumentsChain</code> to handle the interaction flow and execution based on the document content.</li>
+        </ul>
+    </li>
+    <li><strong>Summarize Using MapReduce</strong>:
+        <ul>
+            <li>Employs a MapReduce approach to efficiently summarize large documents.</li>
+            <li>Splits the document into smaller chunks and uses a large language model to summarize each chunk independently.</li>
+            <li>Combines individual summaries into a comprehensive summary, ensuring it captures the essential points of the entire document with added scalability.</li>
+        </ul>
+    </li>
+    <li><strong>Summarize Using Sequential</strong>:
+        <ul>
+            <li>Utilizes a sequential model to effectively summarize large documents.</li>
+            <li>After splitting the document, intermediate summaries of chunks are created and passed along with the chunks to produce a global summary.</li>
+            <li>Follows a sequential process.</li>
+        </ul>
+    </li>
+    <li><strong>Summarize Using Refine</strong>:
+        <ul>
+            <li>Similar to the sequential method with minor changes in the optimality of the algorithm.</li>
+        </ul>
+    </li>
+</ul>
 
-Prompt Template: A custom prompt template is created to instruct the language model on how to process the document.
-
-Language Model Configuration: The ChatOpenAI class is configured with necessary parameters (from config.py) to interact with OpenAI's language models.
-
-Model Chain Setup: The LLMChain class integrates the language model with the prompt, while StuffDocumentsChain handles the interaction flow and execution based on the document content.
-
-Summarize Using Map Reduce: This feature involves the utilization of a MapReduce approach to summarize large documents efficiently. The process involves splitting the document into smaller chunks and using a large language model to summarize each chunk independently.
-
-Afterward, a final summarization step combines these individual summaries into a comprehensive summary, ensuring it captures the essential points of the entire document with added scalability.
-
-Summarise using Sequential: This feature involves the utilization of a sequential model to summarize large documnets effectively. It's different from map reduce as here after splitting the document we create intermediate summaries of chunks and pass these summaries along with the chunks to produce a global summary. Its more like a sequential process.
-
-Summarise using Refine: Its similar to Sequential there are minor changes in the optimality of the algo.
 
 Configurations
 ---------------------
