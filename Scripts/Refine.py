@@ -2,9 +2,9 @@ from langchain.chains.summarize import load_summarize_chain
 from langchain.chat_models import ChatOpenAI
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from PyPDF2 import PdfReader
-from config import llm_config
+from Scripts.config import llm_config
 
-PDF_PATH = "./PDF/Bartleby, The Scrivener A Story Of Wall-street Author Herman Melville.pdf"
+PDF_PATH = "./../PDF/Bartleby, The Scrivener A Story Of Wall-street Author Herman Melville.pdf"
 
 # Function to extract text from a PDF file
 def extract_text_from_pdf(pdf_path):

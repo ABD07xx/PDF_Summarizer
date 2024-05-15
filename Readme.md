@@ -2,7 +2,7 @@
 
 Overview
 -----------------
-This project automates the summarization of PDF documents using a Large Language Model (LLM) chain. The application reads a PDF document, processes its content with a chain of models, and outputs a concise summary. This can be used to find insights, trends etc. All of this cna be achieved by just changing and tweaking the prompts. The chains will be completely same even if we want to change the model or prompts. This provide more flexibility for future upgrades.
+This project automates the summarization of PDF documents using a Large Language Model (LLM) chain. The application reads a PDF document, processes its content with a chain of models, and outputs a concise summary. This can be used to find insights, trends etc. All of this can be achieved by just changing and tweaking the prompts. The chains will be completely same even if we want to change the model or prompts. This provide more flexibility for future upgrades.
 
 Installation
 -----------------------

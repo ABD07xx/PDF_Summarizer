@@ -1,9 +1,9 @@
 from langchain.chat_models import ChatOpenAI
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from PyPDF2 import PdfReader
-from config import llm_config
+from Scripts.config import llm_config
 
-PDF_PATH = "./PDF/Plaid_Asset_Report.pdf"
+PDF_PATH = "./../PDF/Plaid_Asset_Report.pdf"
 
 # Function to extract text from a PDF file
 def extract_text_from_pdf(pdf_path):
@@ -11,8 +11,8 @@ def extract_text_from_pdf(pdf_path):
     return "".join([page.extract_text() for page in pdfreader.pages if page.extract_text()])
 
 # Function to split text into chunks using RecursiveCharacterTextSplitter
-def split_text(text, chunk_size=25000):
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size)
+def split_text(text, chunk_size=5000,chunk_overlap=500):
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size,chunk_overlap=chunk_overlap)
     return text_splitter.create_documents([text])
 
 # Function to initialize the ChatGPT model
@@ -30,18 +30,18 @@ def run_custom_sequential_model(llm, chunks):
             "{chunks[i]}"
 
             Please read through the document carefully. Inside <scratchpad> tags, write out your initial thoughts on how you will approach summarizing the financial information in the document. Consider what key details to extract and how you will organize the summary.
-
+            
             Now, please provide a detailed financial summary of the transactions in the document, focusing on the following sections:
 
             Summary of Account Balances:
             - List each account mentioned along with its current balance and account type (e.g., Checking, Savings, Credit, Investment).
 
-            Transaction Details:
+            Transaction Details(most important):
             - For each account, summarize the transactions including:
-            - Dates of transactions
-            - Descriptions of each transaction (e.g., salary payment, automatic payments, refunds)
-            - Amounts credited and debited
-            - Final daily balance after each transaction
+                - Dates of transactions
+                - Descriptions of each transaction (e.g., salary payment, automatic payments, refunds)
+                - Amounts credited and debited. Credited and Debited can be written in the document in various forms, like credit can be written as inflow and debit can be written as outflow
+                - Final daily balance after each transaction
 
             High-Value Transactions:
             - Highlight any high-value transactions that significantly impact account balances, specifying the transaction amount and date.
@@ -58,6 +58,8 @@ def run_custom_sequential_model(llm, chunks):
             Pending Transactions:
             - Mention any pending transactions, including their potential impact on account balances.
 
+            Similar Transactions:
+            - These should include recurrent transactions that happen on particular dates. Example can be salary credited on 1 of every month or Loan Deducted on every 10th of month. These transactions if available should also be written in answer.
             Make sure to organize the summary by account, highlighting key insights that reflect the financial activity within the report period. Aim to be concise while capturing the essential details.
 
             Please provide your final financial summary inside <financial_summary> tags.

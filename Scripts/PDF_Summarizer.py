@@ -3,11 +3,11 @@ from langchain_community.document_loaders.pdf import PyPDFLoader
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 from Custom_LLMChain import LLMChain
-from CustomStuffDocuments import StuffDocumentsChain
-from config import llm_config
+from Scripts.CustomStuffDocuments import StuffDocumentsChain
+from Scripts.config import llm_config
 
 # Define the path to the PDF document
-PDF_PATH = "./PDF/Bartleby, The Scrivener A Story Of Wall-street Author Herman Melville.pdf"
+PDF_PATH = "./../PDF/Bartleby, The Scrivener A Story Of Wall-street Author Herman Melville.pdf"
 
 # Load the PDF document using PyPDFLoader
 def load_pdf_document(path):
