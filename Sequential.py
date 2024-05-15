@@ -3,7 +3,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from PyPDF2 import PdfReader
 from config import llm_config
 
-PDF_PATH = "./PDF/Bartleby, The Scrivener A Story Of Wall-street Author Herman Melville.pdf"
+PDF_PATH = "./PDF/Plaid_Asset_Report.pdf"
 
 # Function to extract text from a PDF file
 def extract_text_from_pdf(pdf_path):
@@ -25,18 +25,52 @@ def run_custom_sequential_model(llm, chunks):
     for i in range(len(chunks)):
         local_context = ""
         prompt1 = f"""
-        An helpful summarizer. You'll receive a chunk of text and you have to summarize it. During summarization You can take context from summaries of previous chunks.
-        If no previous summary is given proceed with providing summary of current. Piece of Chunk is {chunks[i]} and previous context is {local_context}. The summary you produce should be able to
-        encapsulate both the previous summary and the summary of the new chunk provided
-        """
+            A PDF document containing financial transactions is provided:
+            Document:
+            "{chunks[i]}"
+
+            Please read through the document carefully. Inside <scratchpad> tags, write out your initial thoughts on how you will approach summarizing the financial information in the document. Consider what key details to extract and how you will organize the summary.
+
+            Now, please provide a detailed financial summary of the transactions in the document, focusing on the following sections:
+
+            Summary of Account Balances:
+            - List each account mentioned along with its current balance and account type (e.g., Checking, Savings, Credit, Investment).
+
+            Transaction Details:
+            - For each account, summarize the transactions including:
+            - Dates of transactions
+            - Descriptions of each transaction (e.g., salary payment, automatic payments, refunds)
+            - Amounts credited and debited
+            - Final daily balance after each transaction
+
+            High-Value Transactions:
+            - Highlight any high-value transactions that significantly impact account balances, specifying the transaction amount and date.
+
+            Interest and Fees:
+            - Note any interest payments or fees applied to the accounts, specifying the amounts and dates.
+
+            Overall Financial Insights:
+            - Provide a summary of the financial health indicated by the transactions, such as:
+            - Total amount credited vs. debited
+            - Trends in spending or saving
+            - Any potential financial issues like overdrafts or high credit utilization
+
+            Pending Transactions:
+            - Mention any pending transactions, including their potential impact on account balances.
+
+            Make sure to organize the summary by account, highlighting key insights that reflect the financial activity within the report period. Aim to be concise while capturing the essential details.
+
+            Please provide your final financial summary inside <financial_summary> tags.
+
+            Summary:
+            """
+
         summary = llm.invoke(prompt1)
         local_context += list(summary)[0][1]
     final_context = local_context
-    prompt2 = f"""You will receive a document.Your task is to provide a concise summary of the text, focusing on the key points, important facts, or significant findings.
-    Ensure that the summary is clear, coherent, and flows logically. Organize the main points in a structured manner, aiming to capture the essence of the document
-    without delving into unnecessary details. If there are multiple sections or chunks, summarize each section separately and combine them into a cohesive overall summary.
-    Keep the summary brief and to the point. 
-    Document: {final_context}"""
+    prompt2 = f"""Your job is to produce a final summary.
+    We have provided an existing summary up to a certain point: {final_context}
+    If the context isn't useful, return the original summary."""
 
     summary_final = llm.invoke(prompt2)
     return summary_final
