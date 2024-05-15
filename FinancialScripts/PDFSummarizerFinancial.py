@@ -3,8 +3,8 @@ from langchain_community.document_loaders.pdf import PyPDFLoader
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 from langchain.chains import LLMChain
-from Scripts.CustomStuffDocuments import StuffDocumentsChain
-from Scripts.config import llm_config
+from CustomFiles.CustomStuffDocuments import StuffDocumentsChain
+from CustomFiles.config import llm_config
 
 # Define the path to the PDF document
 PDF_PATH = "./../PDF/Plaid_Asset_Report.pdf"

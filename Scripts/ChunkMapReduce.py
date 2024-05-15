@@ -3,7 +3,7 @@ from langchain import PromptTemplate
 from langchain.chat_models import ChatOpenAI
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from PyPDF2 import PdfReader
-from Scripts.config import llm_config
+from CustomFiles.config import llm_config
 
 PDF_PATH = "./../PDF/Bartleby, The Scrivener A Story Of Wall-street Author Herman Melville.pdf"
 

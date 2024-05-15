@@ -3,9 +3,10 @@ from langchain import PromptTemplate
 from langchain.chat_models import ChatOpenAI
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from PyPDF2 import PdfReader
-from config import llm_config
 from presidio_analyzer import AnalyzerEngine
 from presidio_anonymizer import AnonymizerEngine
+from CustomFiles.config import llm_config
+
 
 
 PDF_PATH = "./../PDF/Plaid_Asset_Report.pdf"

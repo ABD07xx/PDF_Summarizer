@@ -2,7 +2,7 @@ from langchain.chains.summarize import load_summarize_chain
 from langchain.chat_models import ChatOpenAI
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from PyPDF2 import PdfReader
-from Scripts.config import llm_config
+from CustomFiles.config import llm_config
 
 PDF_PATH = "./../PDF/Plaid_Asset_Report.pdf"
 
