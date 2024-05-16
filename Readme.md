@@ -2,7 +2,25 @@
 
 Overview
 -----------------
-This project automates the summarization of PDF documents using a Large Language Model (LLM) chain. The application reads a PDF document, processes its content with a chain of models, and outputs a concise summary. This can be used to find insights, trends etc. All of this can be achieved by just changing and tweaking the prompts. The chains will be completely same even if we want to change the model or prompts. This provide more flexibility for future upgrades.
+This project is designed to streamline the process of summarizing PDF documents by employing Large Language Models (LLMs). Specifically, the system is tailored to process financial PDFs, making it particularly useful for extracting insights and identifying trends and finding anamplies and stuff. All of this can be tailored according to the needs. The application functions by reading a PDF document and then passing its content through a chain finally reaching LLMs. Each model in the chain contributes to refining and condensing the information, resulting in a comprehensive yet succinct summary.
+
+One of the key features of this system is its flexibility. The model chain remains consistent across different applications, which means that modifications to the system—such as changing the model or tweaking the prompts—can be made without altering the underlying structure. This ensures that the system can be easily upgraded or adapted to new requirements in the future. The use of LLM chains in this context not only enhances the efficiency of document processing but also offers significant adaptability for continuous improvement and customization according to evolving needs.
+
+Directory Overview
+----------------------
+    - We have 2 main directories present in this project `DifferentMethods` and `FinancialScripts. Different Methods contains Custom Files and some Python files that we have used to check the different methods that we can employ to summarise the PDFs effectively After thorough testing and overriding some libraries we found that desired outputs. The Files we changed along with the custom files are placed in the CustomFiles folder. 
+    - The `FinancialScripts` Directory contains code that is tailored to analyse PDFs regarding Financial Domain. The answers can be further improved by improving the prompts.
+
+Proposed Models
+---------------------
+    - Sequential Model with PII obfuscation: 
+        ![DisplayWith Algo](https://github.com/ABD07xx/PDF_Summarizer/assets/66874041/726e81c6-2c09-4683-b833-889bb76c9e0a)
+        
+    - Stuffing with with PII obfuscation
+        ![DisplayWith Algo (1)](https://github.com/ABD07xx/PDF_Summarizer/assets/66874041/42272093-e531-43eb-b88d-a3d70e723b42)
+
+
+
 
 Installation
 -----------------------
@@ -10,14 +28,20 @@ Installation
 ### Prerequisites
 Ensure you have Python installed on your machine. Python 3.8 or newer is recommended.
 
+Along with Python you should have access to OPENAI API key or for the matter any API Key that you want to use. If you are using LLM models locally then just change the config file according to that. 
+
 Dependencies
 ---------------------
 Install the necessary Python libraries by running the following command in your terminal:
 
-pip install langchain-community 
-pip install langchain-core 
-pip install langchain-openai
-pip install pypdf2
+pip install langchain==0.1.20
+pip install langchain_community==0.0.38
+pip install langchain_core==0.1.52
+pip install langchain_openai==0.1.6
+pip install presidio_analyzer==2.2.354
+pip install presidio_anonymizer==2.2.354
+pip install PyPDF2==3.0.1
+
 
 To run the project, follow these steps:
 ----------------------------------------
