@@ -8,8 +8,9 @@ One of the key features of this system is its flexibility. The model chain remai
 
 Directory Overview
 ----------------------
-    - We have 2 main directories present in this project `DifferentMethods` and `FinancialScripts. Different Methods contains Custom Files and some Python files that we have used to check the different methods that we can employ to summarise the PDFs effectively After thorough testing and overriding some libraries we found that desired outputs. The Files we changed along with the custom files are placed in the CustomFiles folder. 
-    - The `FinancialScripts` Directory contains code that is tailored to analyse PDFs regarding Financial Domain. The answers can be further improved by improving the prompts.
+We have 2 main directories present in this project `DifferentMethods` and `FinancialScripts. Different Methods contains Custom Files and some Python files that we have used to check the different methods that we can employ to summarise the PDFs effectively After thorough testing and overriding some libraries we found that desired outputs. The Files we changed along with the custom files are placed in the CustomFiles folder. 
+
+The `FinancialScripts` Directory contains code that is tailored to analyse PDFs regarding Financial Domain. The answers can be further improved by improving the prompts.
 
 Proposed Models
 ---------------------
