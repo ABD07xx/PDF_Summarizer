@@ -14,12 +14,10 @@ Directory Overview
 Proposed Models
 ---------------------
     - Sequential Model with PII obfuscation: 
-![Sequential](https://drive.google.com/file/d/13dVm2J2kTklIcTi79vgtx4lqAdKWhDll/view?usp=sharing)
+![Sequential](Assets/Sequential.png)
         
     - Stuffing with with PII obfuscation
-![Stuffing)](https://drive.google.com/file/d/1OKACWN4r-eVl3ewfmhSL0d7mhmQxMK3F/view?usp=sharing)
-
-
+![Stuffing)](Assets/Stuffing.png)
 
 
 Installation
