@@ -20,8 +20,6 @@ Proposed Models
 ![Stuffing)](Assets/Stuffing.png)
 
 
-
-
 Installation
 -----------------------
 
