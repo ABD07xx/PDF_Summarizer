@@ -14,10 +14,10 @@ Directory Overview
 Proposed Models
 ---------------------
     - Sequential Model with PII obfuscation: 
-        ![DisplayWith Algo](https://drive.google.com/file/d/13dVm2J2kTklIcTi79vgtx4lqAdKWhDll/view?usp=sharing)
+![Sequential](https://drive.google.com/file/d/13dVm2J2kTklIcTi79vgtx4lqAdKWhDll/view?usp=sharing)
         
     - Stuffing with with PII obfuscation
-        ![DisplayWith Algo (1)](https://github.com/ABD07xx/PDF_Summarizer/assets/66874041/42272093-e531-43eb-b88d-a3d70e723b42)
+![Stuffing)](https://drive.google.com/file/d/1OKACWN4r-eVl3ewfmhSL0d7mhmQxMK3F/view?usp=sharing)
 
 
 
