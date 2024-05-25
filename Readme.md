@@ -118,7 +118,7 @@ Endpoint Configuration
 -------------------------
 One Endpoint has also been created. This time its only for `PDFSummarizerFinancial` present in <b>Financial Scripts</b> directory. The endpoint name is `PDFSummarizerFinancialEndpoint`.
 
-To run it simply use `<b>uvicorn PDFSummarizerFinancialEndpoint:app --reload</b>`
+To run it simply use <b>`uvicorn PDFSummarizerFinancialEndpoint:app --reload`</b>
 
 
 
