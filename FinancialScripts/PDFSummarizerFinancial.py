@@ -6,8 +6,10 @@ from langchain.chains import LLMChain
 from CustomFiles.CustomStuffDocuments import StuffDocumentsChain
 from CustomFiles.config import llm_config
 
+
 # Define the path to the PDF document
 PDF_PATH = "./../PDF/Plaid_Asset_Report.pdf"
+
 
 # Load the PDF document using PyPDFLoader
 def load_pdf_document(path):
