@@ -115,15 +115,15 @@ Code Structure
 
 
 Configurations
----------------------
+-------------------------
 Configure the language model parameters in the config.py file. This includes API keys and settings related to the OpenAI model used.
 
 Custom Models
------------------------
+----------------------------
 This project uses custom classes (Custom_LLMChain, StuffDocumentsChain) for handling specific logic and interactions. These classes encapsulate the details necessary for integrating different components and managing the data flow.
 
 New Functionalities
 -------------------------
 Custom Language Model Integration: Users now have the flexibility to integrate any LLM, including GPT and Llama3, by modifying the config.py.
 
-Enhanced Summarization Techniques: The application leverages advanced MapReduce techniques for summarizing extensive documents, improving efficiency and scalability.
+Enhanced Summarization Techniques: The application leverages advanced MapReduce techniques for summarizing extensive documents, improving efficiency and scalability
