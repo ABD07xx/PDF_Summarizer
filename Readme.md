@@ -114,6 +114,14 @@ Code Structure
 </ul>
 
 
+Endpoint Configuration
+-------------------------
+One Endpoint has also been created. This time its only for `PDFSummarizerFinancial` present in <b>Financial Scripts</b> directory. The endpoint name is `PDFSummarizerFinancialEndpoint`.
+
+To run it simply use `<b>uvicorn PDFSummarizerFinancialEndpoint:app --reload</b>`
+
+
+
 Configurations
 -------------------------
 Configure the language model parameters in the config.py file. This includes API keys and settings related to the OpenAI model used.
