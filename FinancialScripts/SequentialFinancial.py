@@ -3,7 +3,9 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from PyPDF2 import PdfReader
 from CustomFiles.config import llm_config
 
+
 PDF_PATH = "./../PDF/Plaid_Asset_Report.pdf"
+
 
 # Function to extract text from a PDF file
 def extract_text_from_pdf(pdf_path):
