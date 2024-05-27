@@ -33,19 +33,15 @@ Dependencies
 ---------------------
 Install the necessary Python libraries by running the following command in your terminal:
 
-pip install langchain==0.1.20
-
-pip install langchain_community==0.0.38
-
-pip install langchain_core==0.1.52
-
-pip install langchain_openai==0.1.6
-
-pip install presidio_analyzer==2.2.354
-
-pip install presidio_anonymizer==2.2.354
-
-pip install PyPDF2==3.0.1
+<ul>
+  <li>pip install langchain==0.1.20</li>
+  <li>pip install langchain_community==0.0.38</li>
+  <li>pip install langchain_core==0.1.52</li>
+  <li>pip install langchain_openai==0.1.6</li>
+  <li>pip install presidio_analyzer==2.2.354</li>
+  <li>pip install presidio_anonymizer==2.2.354</li>
+  <li>pip install PyPDF2==3.0.1</li>
+</ul>
 
 
 To run the project, follow these steps:
