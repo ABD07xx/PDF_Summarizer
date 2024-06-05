@@ -1,0 +1,4 @@
+Date: 2024-06-05, Description: Deposit, Amount: 1000, Balance: 5000
+Date: 2024-06-06, Description: ATM Withdrawal, Amount: -200, Balance: 4800
+Date: 2024-06-07, Description: Payment, Amount: -150, Balance: 4650
+Date: 2024-06-08, Description: Transfer, Amount: -500, Balance: 4150

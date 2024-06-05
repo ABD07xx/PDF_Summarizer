@@ -127,19 +127,19 @@ class DocumentPromptCreator:
         # Fetch the specific section from the map; use a default section if doc_type is unrecognized
         doc_specific_section = DocumentPromptCreator.doc_type_prompts.get(doc_type, DocumentPromptCreator.doc_type_prompts["default"])
 
-        prompt_template = f"""
-        A PDF document containing financial transactions is provided:
-        Document:
-        "{docs}"
+        prompt_template = """
+            A PDF document containing financial transactions is provided:
+            Document:
+            "{docs}"
 
-        Please read through the document carefully. Inside <scratchpad> tags, write out your initial thoughts on how you will approach summarizing the financial information in the document. Consider what key details to extract and how you will organize the summary.
+            Please read through the document carefully. Inside <scratchpad> tags, write out your initial thoughts on how you will approach summarizing the financial information in the document. Consider what key details to extract and how you will organize the summary.
 
-        Now, please provide a detailed financial summary of the transactions in the document, focusing on the following sections:
+            Now, please provide a detailed financial summary of the transactions in the document, focusing on the following sections:
+            """ 
 
-        {doc_specific_section}
-
+        # Append the f-string part with 'doc_specific_section'
+        prompt_template += f"""{doc_specific_section}
         Please provide your final financial summary inside <financial_summary> tags.
-
         Summary:
         """
         return PromptTemplate.from_template(prompt_template)

@@ -1,0 +1,6 @@
+[
+    {"date": "2024-06-05", "description": "Deposit", "amount": 1000, "balance": 5000},
+    {"date": "2024-06-06", "description": "ATM Withdrawal", "amount": -200, "balance": 4800},
+    {"date": "2024-06-07", "description": "Payment", "amount": -150, "balance": 4650},
+    {"date": "2024-06-08", "description": "Transfer", "amount": -500, "balance": 4150}
+]

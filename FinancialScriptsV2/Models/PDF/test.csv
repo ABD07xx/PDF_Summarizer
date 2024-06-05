@@ -1,0 +1,5 @@
+Date,Description,Amount,Balance
+2024-06-05,"Deposit",1000,5000
+2024-06-06,"ATM Withdrawal",-200,4800
+2024-06-07,"Payment",-150,4650
+2024-06-08,"Transfer",-500,4150
