@@ -109,24 +109,20 @@ class DocumentPromptCreator:
     }
 
     @staticmethod
-    def create_prompt(prompt_content, doc_type):
+    def create_prompt(docs, doc_type):
         """
         Create a prompt template for the language model to summarize the document based on the document type or a user-defined input.
 
         Args:
-        prompt_content (str): The user-defined prompt content or the textual content for the prompt.
-        doc_type (str): The type of document which determines the prompt template used, or 'custom' for user-defined prompts.
+            docs (str): The document content for the prompt.
+            doc_type (str): The type of document which determines the prompt template used, or 'custom' for user-defined prompts.
 
         Returns:
-        PromptTemplate: A PromptTemplate object containing the formatted prompt.
+            PromptTemplate: A PromptTemplate object containing the formatted prompt.
         """
         # Handle empty or whitespace-only input by returning the default prompt
-        if not prompt_content.strip():
-            return PromptTemplate(DocumentPromptCreator.doc_type_prompts["default"])
-
-        # Handle user-defined prompts or unrecognized document types
-        if doc_type not in DocumentPromptCreator.doc_type_prompts:
-            return PromptTemplate(prompt_content)  # Return the user-defined prompt directly
+        #if not docs.strip():
+            #return PromptTemplate.from_template(DocumentPromptCreator.doc_type_prompts["default"])
 
         # Fetch the specific section from the map; use a default section if doc_type is unrecognized
         doc_specific_section = DocumentPromptCreator.doc_type_prompts.get(doc_type, DocumentPromptCreator.doc_type_prompts["default"])
@@ -134,7 +130,7 @@ class DocumentPromptCreator:
         prompt_template = f"""
         A PDF document containing financial transactions is provided:
         Document:
-        "{prompt_content}"
+        "{docs}"
 
         Please read through the document carefully. Inside <scratchpad> tags, write out your initial thoughts on how you will approach summarizing the financial information in the document. Consider what key details to extract and how you will organize the summary.
 
@@ -147,3 +143,7 @@ class DocumentPromptCreator:
         Summary:
         """
         return PromptTemplate.from_template(prompt_template)
+
+# Usage example:
+# Create an instance and call the method with document content and type
+# prompt_instance = DocumentPromptCreator.create_prompt("Document text goes here...", "credit")

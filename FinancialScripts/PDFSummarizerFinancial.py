@@ -83,7 +83,9 @@ class PDFSummarizer:
     def summarize_pdf(file_content):
         """Main function to execute the document summarization process."""
         docs = PDFSummarizer.load_pdf_document(file_content)
+        print(docs)
         prompt = PDFSummarizer.create_prompt(docs)
+        #print(prompt)
         llm_chain = PDFSummarizer.setup_llm_chain(prompt)
         stuff_chain = StuffDocumentsChain(llm_chain=llm_chain, document_variable_name="docs")
         result = stuff_chain.invoke(docs)

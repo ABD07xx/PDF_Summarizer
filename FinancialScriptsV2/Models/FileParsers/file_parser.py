@@ -5,7 +5,7 @@ import os
 import tempfile
 from io import StringIO
 from bs4 import BeautifulSoup
-from PyPDF2 import PdfReader
+from langchain_community.document_loaders.pdf import PyPDFLoader
 
 class UniversalParser:
     @staticmethod
@@ -33,13 +33,11 @@ class UniversalParser:
             tmpfile.write(file_content)
             tmpfile_path = tmpfile.name
 
-        reader = PdfReader(tmpfile_path)
-        text = ''
-        for page in reader.pages:
-            text += page.extract_text() + ' '
+        loader = PyPDFLoader(tmpfile_path)
+        result = loader.load()
 
         os.unlink(tmpfile_path)
-        return text
+        return result
 
     @staticmethod
     def load_text_document(file_content):

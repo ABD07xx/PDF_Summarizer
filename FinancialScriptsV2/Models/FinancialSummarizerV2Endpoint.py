@@ -30,19 +30,16 @@ async def summarize_document(file: UploadFile = File(...),
             tmp.write(file_content)
             file_path = tmp.name  # Temporary file path with the original file extension
             print("File path:", file_path)
+            
 
         # Check if the file extension is supported
         if suffix.lower() in ['.csv', '.html', '.json', '.pdf', '.txt']:
             # Read and parse document content
             parsed_content = parse_document(file_path)
-            # Get document and loan details
-            #document_details, loan_details = get_document_and_loan_details(doc_type.value, loan_type)
-            #print(doc_type.value,"\n",loan_details)
             # Generate prompt based on the document content and details
-            generated_prompt = generate_prompt(doc_content=parsed_content, doc_type=doc_type.value, loan_type=loan_type, custom_prompt=prompt)
-
+            prompt = generate_prompt(parsed_content,doc_type.value,loan_type,prompt)
             # Summarize the document content using the generated prompt
-            summary = Summarizer.summarize(parsed_content,generated_prompt)
+            summary = Summarizer.summarize(parsed_content,prompt)
             return {"summary": summary}
         else:
             raise ValueError("Unsupported file type: " + suffix)
