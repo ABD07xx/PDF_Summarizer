@@ -3,7 +3,7 @@ from enum import Enum
 import os
 import tempfile
 
-from FinancialSummarizerV2 import Summarizer, parse_document, generate_prompt, get_document_and_loan_details
+from FinancialSummarizerV2 import Summarizer, parse_document, generate_prompt
 
 app = FastAPI()
 
@@ -36,6 +36,7 @@ async def summarize_document(file: UploadFile = File(...),
         if suffix.lower() in ['.csv', '.html', '.json', '.pdf', '.txt']:
             # Read and parse document content
             parsed_content = parse_document(file_path)
+            print(parsed_content)
             # Generate prompt based on the document content and details
             prompt = generate_prompt(parsed_content,doc_type.value,loan_type,prompt)
             # Summarize the document content using the generated prompt
