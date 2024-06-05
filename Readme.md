@@ -137,3 +137,6 @@ New Functionalities
 Custom Language Model Integration: Users now have the flexibility to integrate any LLM, including GPT and Llama3, by modifying the config.py.
 
 Enhanced Summarization Techniques: The application leverages advanced MapReduce techniques for summarizing extensive documents, improving efficiency and scalability
+
+
+<h1> V2 coming soon</h1>
