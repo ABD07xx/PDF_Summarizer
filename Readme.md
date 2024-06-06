@@ -146,7 +146,7 @@ The project introduces a robust and dynamic API service designed to streamline t
 
 
 <h1>Added Functionalities</h1>
---------------------------
+
 # UniversalParser
 
 ## Introduction
