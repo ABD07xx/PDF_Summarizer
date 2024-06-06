@@ -14,5 +14,7 @@ fastapi
 fastembed
 pyyaml
 openpyxl
-IPython
 pydantic_settings
+uvicorn
+enum
+jq

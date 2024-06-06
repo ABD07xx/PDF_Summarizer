@@ -143,3 +143,53 @@ Enhanced Summarization Techniques: The application leverages advanced MapReduce 
 
 Added Functionalities
 --------------------------
+# UniversalParser
+
+## Introduction
+The `UniversalParser` is a Python class designed to facilitate the parsing of documents in various formats including CSV, HTML, JSON, PDF, and Text. Each method within the class handles the creation and deletion of temporary files seamlessly, making it easy for users to load and parse content without having to manage file handling explicitly.
+
+## Features
+- **Load CSV Documents**: Parse CSV files from binary content.
+- **Load HTML Documents**: Parse HTML files from binary content.
+- **Load JSON Documents**: Load and parse JSON files using a specified schema.
+- **Load PDF Documents**: Parse PDF files from binary content.
+- **Load Text Documents**: Parse plain text files from binary content.
+
+# DocumentPromptCreator
+
+## Introduction
+`DocumentPromptCreator` is a Python class that serves as a utility for generating structured prompts for language models, specifically tailored for summarizing financial documents. The class uses predefined templates based on the type of financial document (e.g., credit reports, bank statements, asset summaries, and profit and loss statements). It simplifies the process of guiding language models to extract and summarize key financial data accurately and consistently.
+
+## Features
+- **Document Type Specific Summaries**: Handles various financial document types including `credit`, `bank`, `asset`, and `profit_loss`. Each type has a customized template that highlights key information relevant to that document type.
+- **Customizable Prompt Templates**: In addition to predefined templates, users can specify custom prompts for document types not covered by the default options, providing flexibility in application.
+- **Structured Output**: The prompts are structured to guide language models to produce outputs that are not only relevant but also organized in a manner conducive to financial analysis.
+- **Ease of Use**: Users can easily generate prompts by providing the document content and specifying the document type. The class handles the creation of detailed, structured prompts based on the input.
+- **Scalability and Extensibility**: New document types and templates can be added to the `doc_type_prompts` dictionary, making it easy to scale and extend the class to cover additional types of financial documents.
+
+# Document Processing and Summarization Tool
+
+## Introduction
+This tool is designed to streamline the processing and summarization of various types of documents using advanced language model chains from OpenAI. It includes functionality to parse different document formats, generate structured prompts for document summarization, and utilize language models to provide detailed summaries. The tool leverages Python modules and custom configurations for optimal performance in handling complex text-based operations.
+
+## Features
+- **Multi-Format Document Parsing**: Supports parsing of multiple document types including CSV, HTML, JSON, PDF, and plain text. This feature uses a unified interface (`UniversalParser`) to handle various file types effectively.
+- **Dynamic Prompt Generation**: Capable of generating custom prompts based on the document's content, type, and other parameters such as loan type. This feature allows for flexibility in guiding the summarization process according to specific requirements.
+- **Language Model Integration**: Utilizes OpenAI's language models through the `LLMChain` setup, enabling detailed and context-aware summarizations of the document content. The configuration can be customized via `llm_config`.
+- **Custom Document Chains**: Incorporates a custom document chain (`StuffDocumentsChain`), designed to handle specific document-related tasks within the language model processing pipeline, enhancing the model's focus on relevant details.
+- **Error Handling and Extensibility**: Includes robust error handling for unsupported file types and allows for easy extension to include more document types or custom processing rules.
+
+# FastAPI Document Summarization Service
+
+## Introduction
+This FastAPI service is built to offer an API endpoint for uploading and summarizing documents. It utilizes advanced text processing techniques to parse and summarize documents based on their content and type. This service is capable of handling various document formats, making it versatile for different use cases such as financial analysis, asset management, and credit evaluation.
+
+## Features
+- **Document Type Support**: Handles multiple document formats including CSV, HTML, JSON, PDF, and plain text. This feature allows the service to be flexible in terms of the input it can process.
+- **Dynamic Summarization**: Integrates a sophisticated summarization module (`Summarizer`) which leverages language model chains to generate concise summaries from detailed documents.
+- **Custom Prompt Generation**: The service can generate tailored prompts based on the document type and optional parameters (like loan type), ensuring that the summarization is relevant to the specific context of the document.
+- **Enumeration for Document Types**: Uses a Python Enum to manage different types of documents, supporting clear and error-free handling of document categorization within the API.
+- **Temporary File Handling**: Implements secure and clean temporary file handling to ensure that uploaded documents are stored safely during processing and are cleaned up afterward, preserving server integrity and performance.
+- **Built with FastAPI**: Utilizes FastAPI's asynchronous features to efficiently handle file uploads and processing, providing a responsive and scalable server environment.
+- **Easy Deployment and Testing**: Includes integration with `uvicorn` for simple local testing and deployment, making it straightforward to get the server running and accessible.
+

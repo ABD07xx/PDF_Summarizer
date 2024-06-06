@@ -120,15 +120,12 @@ class DocumentPromptCreator:
         Returns:
             PromptTemplate: A PromptTemplate object containing the formatted prompt.
         """
-        # Handle empty or whitespace-only input by returning the default prompt
-        #if not docs.strip():
-            #return PromptTemplate.from_template(DocumentPromptCreator.doc_type_prompts["default"])
 
         # Fetch the specific section from the map; use a default section if doc_type is unrecognized
         doc_specific_section = DocumentPromptCreator.doc_type_prompts.get(doc_type, DocumentPromptCreator.doc_type_prompts["default"])
 
         prompt_template = """
-            A PDF document containing financial transactions is provided:
+            A document containing financial transactions is provided:
             Document:
             "{docs}"
 
@@ -144,6 +141,3 @@ class DocumentPromptCreator:
         """
         return PromptTemplate.from_template(prompt_template)
 
-# Usage example:
-# Create an instance and call the method with document content and type
-# prompt_instance = DocumentPromptCreator.create_prompt("Document text goes here...", "credit")
