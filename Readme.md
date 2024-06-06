@@ -145,7 +145,7 @@ Enhanced Summarization Techniques: The application leverages advanced MapReduce 
 The project introduces a robust and dynamic API service designed to streamline the processing and summarization of financial documents across various formats and types. Leveraging advanced text parsing and language model technologies, the API offers powerful functionalities to handle documents in CSV, JSON, Text, HTML, and PDF formats. It supports a range of financial document types, including credit reports, profit and loss statements, bank statements, and asset summaries. Additionally, the service provides flexibility to handle different loan types, defaulting to 'auto' for simplicity. Users also have the option to supply custom prompts to tailor the summarization process to their specific needs. This integration of diverse functionalities makes the API a comprehensive solution for document management and summarization tasks, facilitating accurate and efficient information extraction and reporting.
 
 
-Added Functionalities
+<h1>Added Functionalities</h1>
 --------------------------
 # UniversalParser
 
