@@ -1,10 +1,6 @@
-
-import csv
-import json
 import os
 import tempfile
-from io import StringIO
-from bs4 import BeautifulSoup
+from langchain_community.document_loaders import TextLoader
 from langchain_community.document_loaders.pdf import PyPDFLoader
 from langchain_community.document_loaders.csv_loader import CSVLoader
 from langchain_community.document_loaders.json_loader import JSONLoader
@@ -65,7 +61,7 @@ class UniversalParser:
             tmpfile.write(file_content)
             tmpfile_path = tmpfile.name
 
-        loader = PyPDFLoader(tmpfile_path)
+        loader = TextLoader(tmpfile_path)
         result = loader.load()
 
         os.unlink(tmpfile_path)
