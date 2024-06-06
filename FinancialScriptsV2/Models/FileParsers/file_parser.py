@@ -33,15 +33,13 @@ class UniversalParser:
 
     @staticmethod
     def load_json_document(file_content):
-        with tempfile.NamedTemporaryFile(delete=False, suffix='.json') as tmpfile:
-            tmpfile.write(file_content)
-            tmpfile_path = tmpfile.name
-
-        loader = JSONLoader(tmpfile_path)
-        result = loader.load()
-
-        os.unlink(tmpfile_path)
-        return result
+        loader = JSONLoader(
+            file_path=file_content,
+            jq_schema='.',
+            text_content=False
+        )
+        data = loader.load()
+        return data
 
     @staticmethod
     def load_pdf_document(file_content):

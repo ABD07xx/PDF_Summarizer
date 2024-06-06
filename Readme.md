@@ -139,4 +139,7 @@ Custom Language Model Integration: Users now have the flexibility to integrate a
 Enhanced Summarization Techniques: The application leverages advanced MapReduce techniques for summarizing extensive documents, improving efficiency and scalability
 
 
-<h1> V2 coming soon</h1>
+<h1> V2 </h1>
+
+Added Functionalities
+--------------------------
