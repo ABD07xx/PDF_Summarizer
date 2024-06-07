@@ -1,11 +1,11 @@
 import os
 from langchain_openai import ChatOpenAI
 from langchain.chains.llm import LLMChain
+from langchain_core.prompts import PromptTemplate
 from CustomFiles.CustomStuffDocuments import StuffDocumentsChain
 from CustomFiles.config import llm_config
 from FileParsers.file_parser import UniversalParser
 from Prompts.Prompts import DocumentPromptCreator
-from langchain_core.prompts import PromptTemplate
 
 # Mapping file extensions to their respective parser functions for various document types
 file_parsers = {
