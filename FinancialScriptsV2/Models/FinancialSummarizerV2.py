@@ -39,8 +39,9 @@ def generate_prompt(docs, doc_type, loan_type="auto", custom_prompt=None):
     """
     if custom_prompt:
         prompt_template = """
-            [Logic for handling a custom prompt based on user input]
+            This is the document: {docs} and you have to 
         """
+        prompt_template+= f"""{custom_prompt}"""
         return PromptTemplate.from_template(prompt_template)  # Use the custom prompt if provided
     else:
         try:
