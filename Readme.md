@@ -197,3 +197,30 @@ This FastAPI service is built to offer an API endpoint for uploading and summari
 - **Built with FastAPI**: Utilizes FastAPI's asynchronous features to efficiently handle file uploads and processing, providing a responsive and scalable server environment.
 - **Easy Deployment and Testing**: Includes integration with `uvicorn` for simple local testing and deployment, making it straightforward to get the server running and accessible.
 
+Dependencies
+---------------------
+Install the necessary Python libraries by running the following command in your terminal:
+
+<ul>
+<li>langchain==0.1.20</li>
+<li>langchain_community==0.0.38</li>
+<li>langchain_core==0.1.52</li>
+<li>langchain_openai==0.1.6</li>
+<li>presidio_analyzer==2.2.354</li>
+<li>presidio_anonymizer==2.2.354</li>
+<li>PyPDF2==3.0.1</li>
+<li>litellm==1.35.23</li>
+<li>ollama==0.1.3</li>
+<li>pydantic</li>
+<li>IPython</li>
+<li>tempfile</li>
+<li>fastapi</li>
+<li>fastembed</li>
+<li>pyyaml</li>
+<li>openpyxl</li>
+<li>pydantic_settings</li>
+<li>uvicorn</li>
+<li>enum</li>
+<li>jq</li>
+</ul>
+
