@@ -2,6 +2,7 @@ import os
 import tempfile
 import uvicorn
 from fastapi import FastAPI, File, UploadFile, Form
+from fastapi.responses import RedirectResponse
 from enum import Enum
 from FinancialSummarizerV2 import Summarizer, parse_document, generate_prompt
 
@@ -15,6 +16,13 @@ class DocumentType(str, Enum):
     asset = 'asset'
     profit_loss = 'profit_loss'
     default = 'default'
+
+#Endpoint basic
+@app.get("/")  
+def welcome():
+    return RedirectResponse(url='/docs')
+
+
 
 # Define an endpoint to handle document summarization requests
 @app.post("/summarize/")
