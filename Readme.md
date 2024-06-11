@@ -224,3 +224,9 @@ Install the necessary Python libraries by running the following command in your 
 <li>jq</li>
 </ul>
 
+Endpoint Configuration
+-------------------------
+
+To run it simply use <b>`uvicorn PDFSummarizerFinancialV2Endpoint:app --reload`</b>
+<b> Note </b>
+- Please make it sure you are inside FinancialScriptsV2 and there inside Model directory before running this command
