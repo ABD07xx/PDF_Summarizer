@@ -25,7 +25,7 @@ Installation
 -----------------------
 
 ### Prerequisites
-Ensure you have Python installed on your machine. Python 3.8 or newer is recommended.
+Ensure you have Python installed on your machine. Python 3.9 or newer is recommended.
 
 Along with Python you should have access to OPENAI API key or for the matter any API Key that you want to use. If you are using LLM models locally then just change the config file according to that. 
 
