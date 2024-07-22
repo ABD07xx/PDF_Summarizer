@@ -1,7 +1,7 @@
 <h1>PDF Summarizer</h1>
 
 Overview
------------------
+------------------------
 This project is designed to streamline the process of summarizing PDF documents by employing Large Language Models (LLMs). Specifically, the system is tailored to process financial PDFs, making it particularly useful for extracting insights and identifying trends and finding anamplies and stuff. All of this can be tailored according to the needs. The application functions by reading a PDF document and then passing its content through a chain finally reaching LLMs. Each model in the chain contributes to refining and condensing the information, resulting in a comprehensive yet succinct summary.
 
 One of the key features of this system is its flexibility. The model chain remains consistent across different applications, which means that modifications to the system—such as changing the model or tweaking the prompts—can be made without altering the underlying structure. This ensures that the system can be easily upgraded or adapted to new requirements in the future. The use of LLM chains in this context not only enhances the efficiency of document processing but also offers significant adaptability for continuous improvement and customization according to evolving needs.
