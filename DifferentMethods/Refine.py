@@ -6,12 +6,12 @@ from CustomFiles.config import llm_config
 
 PDF_PATH = "./../PDF/Bartleby, The Scrivener A Story Of Wall-street Author Herman Melville.pdf"
 
-# Function to extract text from a PDF file
+# Function to extract text from a PDF file.
 def extract_text_from_pdf(pdf_path):
     pdfreader = PdfReader(pdf_path)
     return "".join([page.extract_text() for page in pdfreader.pages if page.extract_text()])
 
-# Function to split text into chunks using RecursiveCharacterTextSplitter
+# Function to split text into chunks using RecursiveCharacterTextSplitter.
 def split_text(text, chunk_size=25000):
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size)
     return text_splitter.create_documents([text])
