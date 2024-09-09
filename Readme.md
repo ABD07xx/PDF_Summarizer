@@ -232,3 +232,5 @@ To run it simply use <b>`uvicorn PDFSummarizerFinancialV2Endpoint:app --reload`<
 <b> Note </b>
 
 - Please make it sure you are inside `FinancialScriptsV2` and there inside `Model` `directory` before running this command
+- For v2 prompts needs to be adjusted and are just for demo purpose.
+- 
